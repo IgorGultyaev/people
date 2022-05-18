@@ -1,8 +1,8 @@
-public class Person{
+public class Person {
     protected final String name;
     protected final String surname;
-    protected int age;
     protected final String address;
+    protected int age;
 
     public Person(String name, String surname, int age, String city) {
         this.name = name;
@@ -11,7 +11,7 @@ public class Person{
         this.address = city;
     }
 
-    public Person(PersonBuilder personBuilder){
+    public Person(PersonBuilder personBuilder) {
         this.name = personBuilder.getName();
         this.surname = personBuilder.getSurname();
         this.age = personBuilder.getAge();
@@ -34,21 +34,23 @@ public class Person{
         return address;
     }
 
-    public void happyBirthday(){
-        if (hasAge()) {age++;}
+    public void happyBirthday() {
+        if (hasAge()) {
+            age++;
+        }
     }
 
-    public boolean hasAge(){
+    public boolean hasAge() {
         return age >= 0;
     }
 
-    public PersonBuilder newChildBuilder(){
-        return new PersonBuilder(this.surname,this.age,this.address);
+    public PersonBuilder newChildBuilder() {
+        return new PersonBuilder(this.surname, this.age, this.address);
     }
 
     @Override
     public String toString() {
-        return  name + " " +surname;
+        return name + " " + surname;
     }
 }
 

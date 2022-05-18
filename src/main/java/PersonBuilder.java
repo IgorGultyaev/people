@@ -23,40 +23,43 @@ public class PersonBuilder {
     public String getName() {
         return name;
     }
-    public String getSurname() {
-        return surname;
-    }
-    public int getAge() {
-        return age;
-    }
-    public String getAddress() {
-        return address;
-    }
-
-
 
     public PersonBuilder setName(String name) {
         this.name = name;
         return this;
     }
+
+    public String getSurname() {
+        return surname;
+    }
+
     public PersonBuilder setSurname(String surname) {
         this.surname = surname;
         return this;
     }
-    public PersonBuilder setAddress(String address) {
-        this.address = address;
-        return this;
+
+    public int getAge() {
+        return age;
     }
+
     public PersonBuilder setAge(int age) {
         if (age < 0) {
-            throw new IllegalArgumentException("значение возраст должно быть больше чем \"0\"");
+            throw new IllegalArgumentException("значение возраст должно быть е меньше чем \"0\"");
         } else {
             this.age = age;
             return this;
         }
     }
 
-    
+    public String getAddress() {
+        return address;
+    }
+
+    public PersonBuilder setAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
     public Person build() {
         if (name == null) {
             throw new IllegalStateException("Не введено обязательное поле \"имя\"");
